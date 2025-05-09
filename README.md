@@ -16,4 +16,4 @@ This is a project that allowed me to put the skills I learned up to this point i
 
 This webpage is deployed to GitHub Pages
 
-- [Deployment Link](http://127.0.0.1:5500/)
+- [Deployment Link](https://yusorua.github.io/se_project_spots/)
