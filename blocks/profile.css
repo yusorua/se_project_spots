@@ -33,7 +33,7 @@
 .profile__description {
   margin: 0;
   max-width: 420px;
-  height: 16px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1;
   color: #212121b2;
@@ -57,9 +57,10 @@
   align-items: center;
   background-color: transparent;
   gap: 8px;
-  opacity: 0.4;
+  opacity: 0.7;
   padding: 0;
   border: none;
+  color: #212121;
   transition: opacity 0.7s ease-in-out;
 }
 
@@ -90,6 +91,7 @@
   line-height: 1;
   transition: opacity 0.4s ease-in-out;
   border: 0;
+  justify-content: center;
 }
 
 .profile__add-btn:hover {
