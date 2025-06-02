@@ -17,3 +17,4 @@ This is a project that allowed me to put the skills I learned up to this point i
 This webpage is deployed to GitHub Pages
 
 - [Deployment Link](https://yusorua.github.io/se_project_spots/)
+  -video: https://drive.google.com/file/d/1zsDkbAoyY0EqVjjceRYjh23VgY0ucPxI/view?usp=drive_link
