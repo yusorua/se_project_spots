@@ -116,7 +116,7 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
+          <button type="button" class="modal__close-btn modal__btn"></button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
             <label for="name" class="modal__label">
@@ -137,13 +137,19 @@
                 placeholder="Describe yourself"
               />
             </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
+            <button
+              type="submit"
+              class="modal__submit-btn modal__btn"
+              id="edit-submit-btn"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
+          <button type="button" class="modal__close-btn modal__btn"></button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form">
             <label for="image-link" class="modal__label">
@@ -164,7 +170,13 @@
                 placeholder="Type your caption"
               />
             </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
+            <button
+              type="submit"
+              class="modal__submit-btn modal__btn"
+              id="post-submit-btn"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
