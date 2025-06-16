@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0 10px;
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
@@ -43,7 +43,13 @@
   padding: 0;
 }
 
-.modal__btn:hover {
+.modal__close-btn:hover {
+  cursor: pointer;
+  transition: 0.4s ease-in-out opacity;
+  opacity: 1;
+}
+
+.modal__submit-btn:hover {
   cursor: pointer;
   transition: 0.4s ease-in-out opacity;
   opacity: 0.8;
@@ -76,6 +82,7 @@
   border: 1px solid #21212166;
   font-size: 20px;
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .modal__input::placeholder {
@@ -95,8 +102,21 @@
 }
 
 @media screen and (max-width: 627px) {
+  .modal__form {
+    gap: 24px;
+  }
+
   .modal__title {
     font-size: 20px;
+  }
+
+  .modal__container {
+    padding: 22px 12px 12px;
+  }
+
+  .modal__close-btn {
+    top: 22px;
+    right: 12px;
   }
 
   .modal__input {
