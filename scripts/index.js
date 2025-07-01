@@ -136,6 +136,7 @@ function handleNewPostSubmit(evt) {
   cardsContainer.prepend(cardElement);
 
   closeModal(newPostModal);
+  newPostForm.reset();
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
