@@ -81,11 +81,10 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  gap: 32px;
 }
 
 .modal__label {
-  margin: 0 0 8px;
+  margin: 0 0 32px;
   font-size: 16px;
   line-height: 1.1;
   color: #212121b2;
@@ -105,6 +104,14 @@
 .modal__input::placeholder {
   color: #2121214d;
   font-size: 20px;
+}
+
+.modal__error {
+  display: block;
+  color: #ff0000b2;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
 }
 
 .modal__submit-btn {
