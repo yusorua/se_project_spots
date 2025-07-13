@@ -62,7 +62,7 @@
         <div class="modal__container">
           <button type="button" class="modal__close-btn modal__btn"></button>
           <h2 class="modal__title">Edit profile</h2>
-          <form class="modal__form">
+          <form class="modal__form" novalidate>
             <label for="name" class="modal__label">
               Name
               <input
@@ -74,7 +74,7 @@
                 minlength="2"
                 maxlength="40"
               />
-              <span id="name-error" class="modal__error"></span>
+              <span id="name-error" class="modal__error_visible"></span>
             </label>
             <label for="description" class="modal__label">
               Description
@@ -87,7 +87,7 @@
                 minlength="2"
                 maxlength="200"
               />
-              <span id="description-error" class="modal__error"></span>
+              <span id="description-error" class="modal__error_visible"></span>
             </label>
             <button
               type="submit"
@@ -103,7 +103,7 @@
         <div class="modal__container">
           <button type="button" class="modal__close-btn modal__btn"></button>
           <h2 class="modal__title">New post</h2>
-          <form class="modal__form">
+          <form class="modal__form" novalidate>
             <label for="image-link" class="modal__label">
               Image link
               <input
@@ -113,7 +113,7 @@
                 placeholder="Paste a link to the picture"
                 required
               />
-              <span id="image-link-error" class="modal__error"></span>
+              <span id="image-link-error" class="modal__error_visible"></span>
             </label>
             <label for="image-caption" class="modal__label">
               Caption
@@ -126,7 +126,10 @@
                 minlength="2"
                 maxlength="30"
               />
-              <span id="image-caption-error" class="modal__error"></span>
+              <span
+                id="image-caption-error"
+                class="modal__error_visible"
+              ></span>
             </label>
             <button
               type="submit"

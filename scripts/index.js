@@ -40,6 +40,7 @@ const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".modal__form");
+const newPostSubmitBtn = newPostModal.querySelector(".modal__submit-button");
 const newPostTitleInput = newPostModal.querySelector("#image-caption");
 const newPostImageInput = newPostModal.querySelector("#image-link");
 
@@ -100,11 +101,15 @@ function closeModal(modal) {
 profileEditBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescInput.value = ProfileDescriptionEl.textContent;
+  resetValidation(
+    editProfileForm,
+    Array.from(editProfileForm.querySelectorAll(".modal__input"))
+  );
   openModal(profileEditModal);
 });
 
-editProfileCloseBtn.addEventListener("click", function () {
-  openModal(profileEditModal);
+editProfileCloseBtn.addEventListener("click", function (evt) {
+  closeModal(profileEditModal);
 });
 
 newPostBtn.addEventListener("click", function () {
@@ -134,9 +139,10 @@ function handleNewPostSubmit(evt) {
   };
   const cardElement = getCardElement(inputValues);
   cardsContainer.prepend(cardElement);
-
+  // disableButton(newPostSubmitBtn);
   closeModal(newPostModal);
   newPostForm.reset();
+  // Adding the disable button function breaks the code here
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
