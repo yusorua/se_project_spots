@@ -66,7 +66,7 @@
   opacity: 0.4;
 }
 
-.modal__submit-btn:hover {
+.modal__button:hover {
   cursor: pointer;
   transition: 0.4s ease-in-out opacity;
   opacity: 0.8;
@@ -110,7 +110,7 @@
   font-size: 20px;
 }
 
-.modal__error_visible {
+.modal__error {
   display: block;
   color: #ff0000b2;
   font-size: 16px;
@@ -118,7 +118,7 @@
   margin-top: 8px;
 }
 
-.modal__submit-btn {
+.modal__button {
   max-width: 156px;
   width: 100%;
   max-height: 52px;
@@ -129,7 +129,7 @@
   border: none;
 }
 
-.modal__submit-btn_disabled {
+.modal__button_disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -181,7 +181,7 @@
     font-size: 16px;
   }
 
-  .modal__submit-btn {
+  .modal__button {
     max-width: none;
   }
 

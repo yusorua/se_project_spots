@@ -90,8 +90,25 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
+function handleOverlayClose(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.currentTarget);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscClose);
+  modal.addEventListener("click", handleOverlayClose);
 }
 
 function closeModal(modal) {
@@ -101,23 +118,23 @@ function closeModal(modal) {
 profileEditBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescInput.value = ProfileDescriptionEl.textContent;
-  resetValidation(
-    editProfileForm,
-    Array.from(editProfileForm.querySelectorAll(".modal__input"))
-  );
-  openModal(profileEditModal);
+  resetValidation(editProfileForm, [
+    editProfileNameInput,
+    editProfileDescInput,
+  ]);
+  openModal(profileEditModal, settings);
 });
 
 editProfileCloseBtn.addEventListener("click", function (evt) {
-  closeModal(profileEditModal);
+  closeModal(profileEditModal, settings);
 });
 
 newPostBtn.addEventListener("click", function () {
-  openModal(newPostModal);
+  openModal(newPostModal, settings);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  closeModal(newPostModal);
+  closeModal(newPostModal, settings);
 });
 
 function handleEditProfileSubmit(evt) {
@@ -138,8 +155,8 @@ function handleNewPostSubmit(evt) {
     link: newPostImageInput.value,
   };
   const cardElement = getCardElement(inputValues);
-  cardsContainer.prepend(cardElement);
-  // disableButton(newPostSubmitBtn);
+  cardsContainer.prepend(cardElement, settings);
+  disableBtn(newPostSubmitBtn, settings);
   closeModal(newPostModal);
   newPostForm.reset();
   // Adding the disable button function breaks the code here

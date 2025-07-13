@@ -60,7 +60,7 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn modal__btn"></button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form" novalidate>
             <label for="name" class="modal__label">
@@ -74,7 +74,7 @@
                 minlength="2"
                 maxlength="40"
               />
-              <span id="name-error" class="modal__error_visible"></span>
+              <span id="name-error" class="modal__error"></span>
             </label>
             <label for="description" class="modal__label">
               Description
@@ -87,13 +87,9 @@
                 minlength="2"
                 maxlength="200"
               />
-              <span id="description-error" class="modal__error_visible"></span>
+              <span id="description-error" class="modal__error"></span>
             </label>
-            <button
-              type="submit"
-              class="modal__submit-btn modal__btn"
-              id="edit-submit-btn"
-            >
+            <button type="submit" class="modal__button" id="edit-submit-btn">
               Save
             </button>
           </form>
@@ -101,7 +97,7 @@
       </div>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn modal__btn"></button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form" novalidate>
             <label for="image-link" class="modal__label">
@@ -113,7 +109,7 @@
                 placeholder="Paste a link to the picture"
                 required
               />
-              <span id="image-link-error" class="modal__error_visible"></span>
+              <span id="image-link-error" class="modal__error"></span>
             </label>
             <label for="image-caption" class="modal__label">
               Caption
@@ -126,16 +122,9 @@
                 minlength="2"
                 maxlength="30"
               />
-              <span
-                id="image-caption-error"
-                class="modal__error_visible"
-              ></span>
+              <span id="image-caption-error" class="modal__error"></span>
             </label>
-            <button
-              type="submit"
-              class="modal__submit-btn modal__btn"
-              id="post-submit-btn"
-            >
+            <button type="submit" class="modal__button" id="post-submit-btn">
               Save
             </button>
           </form>
@@ -145,7 +134,7 @@
         <div class="modal__image-container">
           <button
             type="button"
-            class="modal__close-btn modal__close-btn_type_preview modal__btn"
+            class="modal__close-btn modal__close-btn_type_preview"
           ></button>
           <img src="#" alt="" class="modal__image" />
           <p class="modal__caption">Golden Gate Bridge</p>
