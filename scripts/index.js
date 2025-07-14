@@ -156,8 +156,11 @@ function handleNewPostSubmit(evt) {
   };
   const cardElement = getCardElement(inputValues);
   cardsContainer.prepend(cardElement, settings);
-  disableBtn(newPostSubmitBtn, settings);
+
   closeModal(newPostModal);
+  newPostTitleInput.value = "";
+  newPostImageInput.value = "";
+  newPostSubmitBtn.disabled = true;
   newPostForm.reset();
   // Adding the disable button function breaks the code here
 }
