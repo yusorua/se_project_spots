@@ -40,7 +40,7 @@ const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".modal__form");
-const newPostSubmitBtn = newPostModal.querySelector(".modal__submit-button");
+const newPostSubmitBtn = newPostModal.querySelector(".modal__button");
 const newPostTitleInput = newPostModal.querySelector("#image-caption");
 const newPostImageInput = newPostModal.querySelector("#image-link");
 
@@ -61,7 +61,7 @@ function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
-  const cardLikeBtn = cardElement.querySelector(".card__like-button");
+  const cardLikeBtn = cardElement.querySelector(".card__like-btn");
 
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
@@ -83,12 +83,12 @@ function getCardElement(data) {
     openModal(previewModal);
   });
 
-  previewModalCloseBtn.addEventListener("click", function () {
-    closeModal(previewModal);
-  });
-
   return cardElement;
 }
+
+previewModalCloseBtn.addEventListener("click", function () {
+  closeModal(previewModal);
+});
 
 function handleEscClose(evt) {
   if (evt.key === "Escape") {
@@ -122,15 +122,23 @@ profileEditBtn.addEventListener("click", function () {
     editProfileNameInput,
     editProfileDescInput,
   ]);
-  openModal(profileEditModal, settings);
+  openModal(profileEditModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function (evt) {
-  closeModal(profileEditModal, settings);
+  closeModal(profileEditModal);
 });
 
 newPostBtn.addEventListener("click", function () {
-  openModal(newPostModal, settings);
+  resetValidation(newPostForm, [newPostTitleInput, newPostImageInput]);
+
+  toggleButtonState(
+    [newPostTitleInput, newPostImageInput],
+    newPostSubmitBtn,
+    settings
+  );
+
+  openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
@@ -155,14 +163,18 @@ function handleNewPostSubmit(evt) {
     link: newPostImageInput.value,
   };
   const cardElement = getCardElement(inputValues);
-  cardsContainer.prepend(cardElement, settings);
+  cardsContainer.prepend(cardElement);
 
   closeModal(newPostModal);
   newPostTitleInput.value = "";
   newPostImageInput.value = "";
-  newPostSubmitBtn.disabled = true;
+  resetValidation(newPostForm, [newPostTitleInput, newPostImageInput]);
   newPostForm.reset();
-  // Adding the disable button function breaks the code here
+  toggleButtonState(
+    [newPostTitleInput, newPostImageInput],
+    newPostSubmitBtn,
+    settings
+  );
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
