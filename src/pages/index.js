@@ -44,6 +44,8 @@ document.querySelector(".profile__edit-btn img").src = penSvg;
 import addSvg from "../images/plus.svg";
 document.querySelector(".profile__add-btn img").src = addSvg;
 
+
+
 const profileEditBtn = document.querySelector(".profile__edit-btn");
 const profileEditModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = profileEditModal.querySelector(".modal__close-btn");
